@@ -1,9 +1,5 @@
 package shop;
 
-import fruits.Apple;
-import fruits.Bowl;
-import fruits.Fruit;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +7,12 @@ public class Shop {
 
     List<Product> productList;
 
-    public Shop(){
+    public Shop() {
         productList = new ArrayList<>();
     }
 
-    public void addProduct(Product... productsToAdd){
-        for(Product product : productsToAdd){
+    public void addProduct(Product... productsToAdd) {
+        for (Product product : productsToAdd) {
 
             productList.add(product);
         }
@@ -26,28 +22,26 @@ public class Shop {
         return productList.size();
     }
 
-    public Shop getAllProductsHasGST(){
+    public List<Product> getAllProductsHasGST() {
 
-
-            Shop productsWithGSt = new Shop();
-
-            for(Product product: productList){
-                if(product.getHasGSTForProduct()){
-                    productsWithGSt.addProduct(product);
-                }
+        List<Product> productsWithGSt = new ArrayList<>();
+        for (Product product : productList) {
+            if (product.getHasGSTForProduct()) {
+                productsWithGSt.add(product);
             }
-            return productsWithGSt;
+        }
+        return productsWithGSt;
 
     }
 
-    public Shop getAllProductsHasGSTWithMRPMoreThanTwoThousand(){
+    public List<Product> getAllProductsHasGSTWithMRPMoreThanTwoThousand() {
 
 
-        Shop productsWithGSt = new Shop();
+        List<Product> productsWithGSt = new ArrayList<>();
 
-        for(Product product: productList){
-            if(product.getHasGSTForProduct() && (product.getproductMRP() > 2000)){
-                productsWithGSt.addProduct(product);
+        for (Product product : productList) {
+            if (product.getHasGSTForProduct() && (product.getProductMRP() > 2000)) {
+                productsWithGSt.add(product);
             }
         }
         return productsWithGSt;
