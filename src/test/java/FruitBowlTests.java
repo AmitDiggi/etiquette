@@ -7,13 +7,13 @@ import org.testng.annotations.Test;
 
 public class FruitBowlTests {
 
-    public FruitBowlTests(){
+    public FruitBowlTests() {
 
     }
 
 
     @Test
-    public void verifyNumberOfFruitsInBowl(){
+    public void verifyNumberOfFruitsInBowl() {
         Apple apple1 = new Apple();
         Apple apple2 = new Apple();
         Orange orange1 = new Orange();
@@ -21,15 +21,15 @@ public class FruitBowlTests {
         Banana banana1 = new Banana();
         Banana banana2 = new Banana();
         Bowl mixedFruitBowl = new Bowl();
-        mixedFruitBowl.addFruit(apple1,apple2,orange1,orange2,banana1,banana2);
+        mixedFruitBowl.addFruit(apple1, apple2, orange1, orange2, banana1, banana2);
 
-        Assert.assertEquals(mixedFruitBowl.getNumberOfFruitsInBowl(),6);
+        Assert.assertEquals(mixedFruitBowl.getNumberOfFruitsInBowl(), 6);
 
     }
 
 
     @Test
-    public void verifyNumberOfApplesInBowl(){
+    public void verifyNumberOfApplesInBowl() {
         Apple apple1 = new Apple();
         Apple apple2 = new Apple();
         Orange orange1 = new Orange();
@@ -38,10 +38,10 @@ public class FruitBowlTests {
         Banana banana2 = new Banana();
 
         Bowl mixedFruitBowl = new Bowl();
-        mixedFruitBowl.addFruit(apple1,apple2,orange1,orange2,banana1,banana2);
+        mixedFruitBowl.addFruit(apple1, apple2, orange1, orange2, banana1, banana2);
 
 
         Bowl bowlOfApples = mixedFruitBowl.getAllApplesInBowl();
-        Assert.assertEquals(bowlOfApples.getNumberOfFruitsInBowl(),2);
+        Assert.assertEquals(bowlOfApples.getNumberOfFruitsInBowl(), 2);
     }
 }
